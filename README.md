@@ -30,3 +30,4 @@ marchandises livrées sur une tournée ne doit pas dépasser la capacité du vé
 
 ### Exemple :
 la figure au dessous représente un exmeple de VRP avec 15 clients et 3 véhicules
+![exemple](images/exemple.jpg)
