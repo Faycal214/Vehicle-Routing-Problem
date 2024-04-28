@@ -30,4 +30,43 @@ marchandises livrées sur une tournée ne doit pas dépasser la capacité du vé
 
 ### Exemple :
 la figure au dessous représente un exmeple de VRP avec 15 clients et 3 véhicules
-![exemple](images/exemple.jpg)
+
+<p align="center">
+  <img src="exemple.jpg" alt="exemple">
+</p>
+
+
+{1\}}&space;d_{i}X_{ijk}&space;\leq&space;q_{k},&space;\quad&space;\forall&space;k&space;\in&space;K&space;\\&space;C_{ij}&space;\geq&space;0&space;,&space;\quad&space;d_{i}&space;\geq&space;0&space;,&space;\quad&space;q_{k}&space;\geq&space;0&space;,&space;\quad&space;X_{ijk}&space;\in&space;\{0,1\}&space;\end{align*})
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathJax Test</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+# My LaTeX Equations
+
+Here are some LaTeX equations rendered using MathJax:
+
+\[
+\begin{align*}
+& \textbf{PL} \quad \text{subject to:} \\
+& \min(Z) = \sum_{i \in I} \sum_{j \in J} \sum_{k \in K} C_{ij} X_{ijk} \\
+& \sum_{i \in I} \sum_{k \in K} X_{ijk} = 1, \quad \forall j \in I \setminus \{1\} \\
+& \sum_{i \in I} X_{ijk} = \sum_{i \in I} X_{jik}, \quad \forall j \in I, \forall k \in K \\
+& \sum_{j \in I \setminus \{1\}} X_{1jk} = 1, \quad \forall k \in K \\
+& \sum_{i \in I} \sum_{j \in I \setminus \{1\}} d_{i}X_{ijk} \leq q_{k}, \quad \forall k \in K \\
+& C_{ij} \geq 0 , \quad d_{i} \geq 0 , \quad q_{k} \geq 0 , \quad X_{ijk} \in \{0,1\}
+\end{align*}
+\]
+
+</body>
+</html>
+
+
