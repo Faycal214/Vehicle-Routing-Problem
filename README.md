@@ -47,5 +47,37 @@ combinaison des caractéristiques génétiques de divers individus au sein d’u
 
 Les algorithmes génétiques sont particulièrement utiles dans les situations où l’espace de recherche est vaste et complexe, et où les méthodes traditionnelles d’optimisation sont inefficaces ou trop lentes. Ils sont basés sur la création d’une population de solutions potentielles, l’évaluation de ces solutions selon une fonction de fitness, et l’utilisation de mécanismes tels que la sélection, le croisement et la mutation pour générer de nouvelles générations de solutions plus adaptées
 
-### Population : 
+### 1. Population : 
 La population représente l'ensemble des solutions réalisables(individu), qu'est sélectionné au hasard lors de la première itération. Le choix de la population initiale d'individus conditionne fortement la rapidité de l'algorithme. La taille des populations est d'ordinaire fixée à l'avance, mais peut également varier d'une génération à l'autre.
+
+<p align="center">
+  <img src="population.jpg" alt="population">
+</p>
+
+### 2. Evaluation :
+
+À cette étape, nous évaluons chaque solution en lui attribuant un score pour déterminer sa qualité. Ce processus nécessite un calcul rapide pour éviter de ralentir l'algorithme. Généralement, nous utilisons une fonction appelée "Fitness", qui correspond souvent à la fonction objectif visant à maximiser ou minimiser une certaine métrique.
+
+### 3. Sèlection :
+
+À cette étape, nous choisissons les candidats qui se reproduiront et s'entrecroiseront pour former la prochaine génération. Ce processus ressemble à la sélection naturelle, où les individus les mieux adaptés sont favorisés pour se reproduire, améliorant ainsi globalement l'adaptation de la population. Il existe différentes méthodes de sélection : 
+
+1. Sélection par rang : Cette méthode conserve les meilleurs individus en fonction de leur score de fitness. Si une population compte N individus, les K meilleurs sont sélectionnés pour la reproduction.
+2. Sélection par roulette : Aussi appelée "roue de la fortune", chaque individu a une probabilité de sélection proportionnelle à son adaptation au problème. On utilise une roue de la fortune biaisée pour sélectionner les individus, puis on procède à un tirage au sort homogène.
+3. Sélection uniforme : Les individus sont sélectionnés de manière aléatoire, sans prendre en compte leur niveau d'adaptation. Chaque individu a une probabilité égale d'être choisi, soit 1/N où N est le nombre total d'individus dans la population.
+
+### 4. Croissement :
+
+Lors de cette étape, deux solutions  échangent des segments de leurs gènes pour produire de nouveaux solutions . Ces échanges peuvent être simples ou multiples. Dans le premier cas, les solutions échangent des segments en un seul point. Dans le second cas, plusieurs points d'échange sont impliqués.
+
+### 5. Mutation :
+
+De manière aléatoire, un gène  peut être remplacé par un autre. Comme pour les croisements, nous définissons un taux ou une probabilité, notée Pm, pour déterminer quand et comment cette mutation peut se produire lors des changements de population. Il est essentiel de choisir une valeur faible pour ce taux afin de ne pas entraîner une recherche aléatoire et de maintenir les principes de sélection et d'évalution. La mutation est appliquée pour éviter une convergence prématurée de l'algorithme, ce qui signifie qu'elle empêche la convergence vers un extremum local lors d'une recherche d'extrémum.
+
+### 6. Critères d'arrèt :
+
+La condition de terminaison d’un algorithme génétique est importante pour déterminer quand son exécution se termine. Nous voulons généralement une condition d’arrêter telle que notre solution soit proche de l’optimum, à la fin de l’exécution. Habituellement, nous gardons l’une des conditions d’arrêt suivantes : 
+1. Lorsqu’un nombre spécifique d’itérations est atteint.
+2. Lorsque la valeur de la fonction objective a atteint une certaine valeur prédéfinie.
+3. Quand il n’y a pas eu d’amélioration de la population pendant X itérations, c’est-à-dire lorsque la variation de la valeur de performance des candidats par rapport aux générations précédentes est plus petite qu’un seuil choisi au préalable.
+
