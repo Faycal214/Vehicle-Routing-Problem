@@ -36,37 +36,16 @@ la figure au dessous représente un exmeple de VRP avec 15 clients et 3 véhicul
 </p>
 
 
-{1\}}&space;d_{i}X_{ijk}&space;\leq&space;q_{k},&space;\quad&space;\forall&space;k&space;\in&space;K&space;\\&space;C_{ij}&space;\geq&space;0&space;,&space;\quad&space;d_{i}&space;\geq&space;0&space;,&space;\quad&space;q_{k}&space;\geq&space;0&space;,&space;\quad&space;X_{ijk}&space;\in&space;\{0,1\}&space;\end{align*})
+## Methode de resolution : 
+
+es fondements des algorithmes génétiques remontent aux années 1960, époque à laquelle John
+Holland [7], avec ses collaborateurs et étudiants de l’Université du Michigan, a commencé à explorer
+cette approche. Ils ont innové en introduisant les opérateurs de croisement et de mutation, des mé-
+canismes clés qui facilitent la convergence vers une solution optimale d’une fonction donnée par la
+combinaison des caractéristiques génétiques de divers individus au sein d’une population
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathJax Test</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
+Les algorithmes génétiques sont particulièrement utiles dans les situations où l’espace de recherche est vaste et complexe, et où les méthodes traditionnelles d’optimisation sont inefficaces ou trop lentes. Ils sont basés sur la création d’une population de solutions potentielles, l’évaluation de ces solutions selon une fonction de fitness, et l’utilisation de mécanismes tels que la sélection, le croisement et la mutation pour générer de nouvelles générations de solutions plus adaptées
 
-# My LaTeX Equations
-
-Here are some LaTeX equations rendered using MathJax:
-
-\[
-\begin{align*}
-& \textbf{PL} \quad \text{subject to:} \\
-& \min(Z) = \sum_{i \in I} \sum_{j \in J} \sum_{k \in K} C_{ij} X_{ijk} \\
-& \sum_{i \in I} \sum_{k \in K} X_{ijk} = 1, \quad \forall j \in I \setminus \{1\} \\
-& \sum_{i \in I} X_{ijk} = \sum_{i \in I} X_{jik}, \quad \forall j \in I, \forall k \in K \\
-& \sum_{j \in I \setminus \{1\}} X_{1jk} = 1, \quad \forall k \in K \\
-& \sum_{i \in I} \sum_{j \in I \setminus \{1\}} d_{i}X_{ijk} \leq q_{k}, \quad \forall k \in K \\
-& C_{ij} \geq 0 , \quad d_{i} \geq 0 , \quad q_{k} \geq 0 , \quad X_{ijk} \in \{0,1\}
-\end{align*}
-\]
-
-</body>
-</html>
-
-
+### Population : 
+La population représente l'ensemble des solutions réalisables(individu), qu'est sélectionné au hasard lors de la première itération. Le choix de la population initiale d'individus conditionne fortement la rapidité de l'algorithme. La taille des populations est d'ordinaire fixée à l'avance, mais peut également varier d'une génération à l'autre.
